@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Convert your gaming sensitivity settings between BGMI, PUBG, Free Fire, and COD Mobile.">
+    <title>Sensitivity Converter - SensiFinder</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="src/app/favicon.ico">
+</head>
+
+<body data-page="converter">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="6" y1="12" x2="10" y2="12" />
+                        <line x1="8" y1="10" x2="8" y2="14" />
+                        <line x1="15" y1="13" x2="15.01" y2="13" />
+                        <line x1="18" y1="11" x2="18.01" y2="11" />
+                        <rect x="2" y="6" width="20" height="12" rx="2" />
+                    </svg>
+                </div>
+                <span class="logo-text">SensiFinder</span>
+            </a>
+
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                        <polyline points="9 22 9 12 15 12 15 22" />
+                    </svg>
+                    Home
+                </a>
+                <a href="upload.html" class="nav-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                        <polyline points="17 8 12 3 7 8" />
+                        <line x1="12" y1="3" x2="12" y2="15" />
+                    </svg>
+                    Upload
+                </a>
+                <a href="converter.html" class="nav-link active">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 2v6h-6" />
+                        <path d="M3 12a9 9 0 0 1 15-6.7L21 8" />
+                        <path d="M3 22v-6h6" />
+                        <path d="M21 12a9 9 0 0 1-15 6.7L3 16" />
+                    </svg>
+                    Converter
+                </a>
+            </div>
+
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" y1="12" x2="21" y2="12" />
+                    <line x1="3" y1="6" x2="21" y2="6" />
+                    <line x1="3" y1="18" x2="21" y2="18" />
+                </svg>
+            </button>
+        </div>
+
+        <div class="mobile-menu" id="mobile-menu">
+            <a href="index.html" class="nav-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                    <polyline points="9 22 9 12 15 12 15 22" />
+                </svg>
+                Home
+            </a>
+            <a href="upload.html" class="nav-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    <polyline points="17 8 12 3 7 8" />
+                    <line x1="12" y1="3" x2="12" y2="15" />
+                </svg>
+                Upload
+            </a>
+            <a href="converter.html" class="nav-link active">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 2v6h-6" />
+                    <path d="M3 12a9 9 0 0 1 15-6.7L21 8" />
+                    <path d="M3 22v-6h6" />
+                    <path d="M21 12a9 9 0 0 1-15 6.7L3 16" />
+                </svg>
+                Converter
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="section" style="padding-top: 100px;">
+        <div class="section-container">
+            <!-- Header -->
+            <div class="text-center mb-8">
+                <div
+                    style="display: inline-flex; align-items: center; justify-content: center; width: 64px; height: 64px; border-radius: 16px; background: linear-gradient(135deg, var(--primary), var(--secondary)); margin-bottom: 24px; box-shadow: 0 0 30px rgba(139, 92, 246, 0.3);">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                        stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 2v6h-6" />
+                        <path d="M3 12a9 9 0 0 1 15-6.7L21 8" />
+                        <path d="M3 22v-6h6" />
+                        <path d="M21 12a9 9 0 0 1-15 6.7L3 16" />
+                    </svg>
+                </div>
+                <h1 class="section-title" style="font-size: 2rem;">Sensitivity Converter</h1>
+                <p class="section-subtitle" style="max-width: 600px; margin: 16px auto 0;">
+                    Convert your sensitivity settings between different games.
+                    Perfect for players who switch between BGMI, PUBG, Free Fire, and COD Mobile.
+                </p>
+            </div>
+
+            <!-- Converter -->
+            <div class="converter-container">
+                <div class="converter-grid">
+                    <!-- Source Game -->
+                    <div class="converter-box">
+                        <h3 class="converter-box-title">From</h3>
+
+                        <div class="form-group">
+                            <label class="form-label">Source Game</label>
+                            <select class="form-input form-select" id="source-game">
+                                <option value="BGMI">BGMI</option>
+                                <option value="PUBG">PUBG</option>
+                                <option value="Free Fire">Free Fire</option>
+                                <option value="COD">COD Mobile</option>
+                            </select>
+                        </div>
+
+                        <div class="slider-row">
+                            <span class="slider-label">No Scope</span>
+                            <div class="slider-wrapper">
+                                <input type="range" class="slider" id="source-no_scope" min="0" max="300" value="100">
+                            </div>
+                            <span class="slider-value">100</span>
+                        </div>
+                        <div class="slider-row">
+                            <span class="slider-label">Red Dot</span>
+                            <div class="slider-wrapper">
+                                <input type="range" class="slider" id="source-red_dot" min="0" max="300" value="100">
+                            </div>
+                            <span class="slider-value">100</span>
+                        </div>
+                        <div class="slider-row">
+                            <span class="slider-label">2x</span>
+                            <div class="slider-wrapper">
+                                <input type="range" class="slider" id="source-2x" min="0" max="300" value="100">
+                            </div>
+                            <span class="slider-value">100</span>
+                        </div>
+                        <div class="slider-row">
+                            <span class="slider-label">3x</span>
+                            <div class="slider-wrapper">
+                                <input type="range" class="slider" id="source-3x" min="0" max="300" value="100">
+                            </div>
+                            <span class="slider-value">100</span>
+                        </div>
+                        <div class="slider-row">
+                            <span class="slider-label">4x</span>
+                            <div class="slider-wrapper">
+                                <input type="range" class="slider" id="source-4x" min="0" max="300" value="100">
+                            </div>
+                            <span class="slider-value">100</span>
+                        </div>
+                        <div class="slider-row">
+                            <span class="slider-label">6x</span>
+                            <div class="slider-wrapper">
+                                <input type="range" class="slider" id="source-6x" min="0" max="300" value="100">
+                            </div>
+                            <span class="slider-value">100</span>
+                        </div>
+                        <div class="slider-row">
+                            <span class="slider-label">8x</span>
+                            <div class="slider-wrapper">
+                                <input type="range" class="slider" id="source-8x" min="0" max="300" value="100">
+                            </div>
+                            <span class="slider-value">100</span>
+                        </div>
+                    </div>
+
+                    <!-- Arrow -->
+                    <div class="converter-arrow">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                            <polyline points="12 5 19 12 12 19" />
+                        </svg>
+                    </div>
+
+                    <!-- Target Game -->
+                    <div class="converter-box">
+                        <h3 class="converter-box-title">To</h3>
+
+                        <div class="form-group">
+                            <label class="form-label">Target Game</label>
+                            <select class="form-input form-select" id="target-game">
+                                <option value="BGMI">BGMI</option>
+                                <option value="PUBG" selected>PUBG</option>
+                                <option value="Free Fire">Free Fire</option>
+                                <option value="COD">COD Mobile</option>
+                            </select>
+                        </div>
+
+                        <p style="color: var(--text-secondary); font-size: 0.875rem; margin-top: 24px;">
+                            Click "Convert" to see the calculated sensitivity values for your target game.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Convert Button -->
+                <div class="text-center mt-8">
+                    <button class="btn btn-primary btn-lg" id="convert-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 2v6h-6" />
+                            <path d="M3 12a9 9 0 0 1 15-6.7L21 8" />
+                            <path d="M3 22v-6h6" />
+                            <path d="M21 12a9 9 0 0 1-15 6.7L3 16" />
+                        </svg>
+                        Convert Sensitivity
+                    </button>
+                </div>
+
+                <!-- Results -->
+                <div id="conversion-results" class="hidden mt-8">
+                    <!-- Results will be rendered by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <div class="logo-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="6" y1="12" x2="10" y2="12" />
+                        <line x1="8" y1="10" x2="8" y2="14" />
+                        <line x1="15" y1="13" x2="15.01" y2="13" />
+                        <line x1="18" y1="11" x2="18.01" y2="11" />
+                        <rect x="2" y="6" width="20" height="12" rx="2" />
+                    </svg>
+                </div>
+                <span class="logo-text">SensiFinder</span>
+            </div>
+            <p class="footer-text">© 2024 SensiFinder. Made with ❤️ for gamers.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/data.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
